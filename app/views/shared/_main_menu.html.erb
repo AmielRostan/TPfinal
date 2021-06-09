@@ -1,0 +1,32 @@
+<div class="collapse navbar-collapse show" id="navbarWithDropdown">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <%= link_to "Inicio", root_url, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Categorias", categories_url, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Personas", people_url, class: 'nav-link'%>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Service", services_url, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Alquilar", rents_url, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Vehiculos", vehicles_url, class: 'nav-link' %>
+    </li>
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href=" <%= categories_url %>" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <li><%= link_to "Editar Categorias", categories_url, class: 'dropdown-item' %></li>
+        <% Category.all.each do |cat| %>
+          <li><%= link_to cat.name, store_products_url(category: cat.id), class: 'dropdown-item' %></li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+</div>

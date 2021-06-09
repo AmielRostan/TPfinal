@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @vehicle.category_id %>
+</p>
+
+<p>
+  <strong>Patent:</strong>
+  <%= @vehicle.patent %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @vehicle.brand %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @vehicle.model %>
+</p>
+
+<p>
+  <strong>Fuel:</strong>
+  <%= @vehicle.fuel %>
+</p>
+
+<p>
+  <strong>Kilometres:</strong>
+  <%= @vehicle.kilometres %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @vehicle.value %>
+</p>
+
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+<%= link_to 'Back', vehicles_path %>

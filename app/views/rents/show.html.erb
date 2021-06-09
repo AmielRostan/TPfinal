@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vehicle:</strong>
+  <%= @rent.vehicle_id %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @rent.person_id %>
+</p>
+
+<p>
+  <strong>Begins at:</strong>
+  <%= @rent.begins_at %>
+</p>
+
+<p>
+  <strong>Ends at:</strong>
+  <%= @rent.ends_at %>
+</p>
+
+<p>
+  <strong>Pay:</strong>
+  <%= @rent.pay %>
+</p>
+
+<%= link_to 'Edit', edit_rent_path(@rent) %> |
+<%= link_to 'Back', rents_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: one
+  patent: MyString
+  brand: MyString
+  model: MyString
+  fuel: MyString
+  kilometres: 1
+  value: 
+
+two:
+  category: two
+  patent: MyString
+  brand: MyString
+  model: MyString
+  fuel: MyString
+  kilometres: 1
+  value: 

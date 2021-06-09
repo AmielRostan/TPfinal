@@ -1,0 +1,7 @@
+<% if I18n.locale == I18n.default_locale %>
+  <!-- <strong><%= t("language_details") %> </strong>  -->
+  <%= link_to "Change to English", { :locale=>'en' } %>
+<% else %>
+   <!-- <strong><%= t("language_details") %> </strong>  -->
+   <%= link_to "Cambiar a Español", { :locale=>'es' } %>
+<%end%>
