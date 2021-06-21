@@ -5,6 +5,8 @@ class PeopleController < ApplicationController
   # GET /people or /people.json
   def index
     @people = Person.all
+    @people = @people.order(:last_name).page(params[:page] || 1)
+
   end
 
   # GET /people/1 or /people/1.json

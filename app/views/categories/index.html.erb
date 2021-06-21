@@ -2,6 +2,11 @@
 
 <h1>Categories</h1>
 
+<form method="GET" action="/categories">
+  Nombre de la categoria: <input type="text" name="filter" />
+  <input type="submit">
+</form>
+
 <table>
   <thead>
     <tr>
@@ -21,6 +26,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @categories %>
 
 <br>
 

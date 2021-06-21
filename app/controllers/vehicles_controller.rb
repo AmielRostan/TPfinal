@@ -5,6 +5,7 @@ class VehiclesController < ApplicationController
   # GET /vehicles or /vehicles.json
   def index
     @vehicles = Vehicle.all
+    @vehicles = @vehicles.order(:patent).page(params[:page] || 1)
   end
 
   # GET /vehicles/1 or /vehicles/1.json
@@ -65,6 +66,6 @@ class VehiclesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vehicle_params
-      params.require(:vehicle).permit(:category_id, :patent, :brand, :model, :fuel, :kilometres, :value)
+      params.require(:vehicle).permit(:category_id, :patent, :brand_id, :model, :fuel, :kilometres, :value)
     end
 end

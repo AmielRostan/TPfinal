@@ -3,7 +3,7 @@ class CreateVehicles < ActiveRecord::Migration[6.1]
     create_table :vehicles do |t|
       t.references :category, null: false, foreign_key: true
       t.string :patent
-      t.string :brand
+      # t.string :brand
       t.string :model
       t.string :fuel
       t.integer :kilometres

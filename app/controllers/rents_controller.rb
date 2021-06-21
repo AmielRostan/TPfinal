@@ -5,6 +5,7 @@ class RentsController < ApplicationController
   # GET /rents or /rents.json
   def index
     @rents = Rent.all
+    @rents = @rents.order(:name).page(params[:page] || 1)
   end
 
   # GET /rents/1 or /rents/1.json
@@ -23,6 +24,13 @@ class RentsController < ApplicationController
   # POST /rents or /rents.json
   def create
     @rent = Rent.new(rent_params)
+
+
+# METODO PARA HACER EL VALOR DEL PAGO
+    totalpay = (@rent.ends_at - @rent.begins_at).to_i
+    totalpay = totalpay * @rent.vehicle.value
+    @rent.pay = totalpay
+
 
     respond_to do |format|
       if @rent.save

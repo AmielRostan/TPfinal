@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :brand %>
-    <%= form.text_field :brand %>
+    <%= form.label :brand_id %>
+    <%= form.collection_select(:brand_id, Brand.all, :id, :name) %>
   </div>
 
   <div class="field">
@@ -33,8 +33,13 @@
 
   <div class="field">
     <%= form.label :fuel %>
-    <%= form.text_field :fuel %>
+    <select name="vehicle[fuel]">  <!-- GRACIAS AL DINOX -->
+      <option value="Nafta">Nafta</option>
+      <option value="Diesel">Diesel</option>
+    </select>
   </div>
+
+
 
   <div class="field">
     <%= form.label :kilometres %>

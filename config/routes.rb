@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :brands
   get 'firstlook/new'
   get 'firstlook/create'
   resources :rents

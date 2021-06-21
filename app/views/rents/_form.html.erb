@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :person_id %>
-    <%= form.collection_select(:person_id, Person.all, :id, :patent) %>
+    <%= form.collection_select(:person_id, Person.all, :id, :full_name) %>
   </div>
 
   <div class="field">
@@ -33,7 +33,9 @@
 
   <div class="field">
     <%= form.label :pay %>
-    <%= form.text_field :pay %>
+    <select name="rent[pay]">  <!-- GRACIAS AL DINOX -->
+      <option value="<%= rent.payment %>"><%= rent.payment %></option>
+    </select>
   </div>
 
   <div class="actions">

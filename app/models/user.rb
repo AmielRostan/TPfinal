@@ -7,6 +7,10 @@ class User < ApplicationRecord
 
 
   def full_name
-   self.person.full_name
+    if self.person.nil?
+      "anonimo"
+    else
+      self.person.full_name
+    end
   end
 end

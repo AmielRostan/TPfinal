@@ -19,9 +19,9 @@
   <tbody>
     <% @vehicles.each do |vehicle| %>
       <tr>
-        <td><%= vehicle.category_id %></td>
+        <td><%= vehicle.category.name %></td>
         <td><%= vehicle.patent %></td>
-        <td><%= vehicle.brand %></td>
+        <td><%= vehicle.brand.name %></td>
         <td><%= vehicle.model %></td>
         <td><%= vehicle.fuel %></td>
         <td><%= vehicle.kilometres %></td>
@@ -33,6 +33,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @vehicles %>
 
 <br>
 

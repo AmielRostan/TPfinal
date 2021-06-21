@@ -23,7 +23,9 @@
 
   <div class="field">
     <%= form.label :kilometres %>
-    <%= form.number_field :kilometres %>
+    <select name="service[kilometres]">
+      <option value="<%= service.distance %>"><%= service.distance %></option>
+    </select>
   </div>
 
   <div class="field">

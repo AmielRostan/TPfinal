@@ -5,6 +5,7 @@ class ServicesController < ApplicationController
   # GET /services or /services.json
   def index
     @services = Service.all
+    @services = @services.order(:begins_at).page(params[:page] || 1)
   end
 
   # GET /services/1 or /services/1.json
@@ -23,6 +24,10 @@ class ServicesController < ApplicationController
   # POST /services or /services.json
   def create
     @service = Service.new(service_params)
+
+# METODO PARA HACER LA DISTANCIA DEL SERVICIO
+    km = @service.vehicle.kilometres
+    @service.kilometres = km
 
     respond_to do |format|
       if @service.save

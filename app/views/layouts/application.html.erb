@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-   <title>Minimarket</title>
+   <title>Rent a Car</title>
    <meta name="viewport" content="width=device-width,initial-scale=1">
    <%= csrf_meta_tags %>
    <%= csp_meta_tag %>
@@ -16,17 +16,15 @@
  <body>
    <%= render 'shared/navbar' %>
 
-   <div class="container" style="margin-top: 80px !important; min-height: 950px;">
+   <div id="important" class="container" style="margin-top: 54px !important; min-height: 900px;">
      <!-- Espacio para mostrar los mensajes de aplicación (:flash, :notice, :error, etc)" -->
      <% flash.each do |name, msg| %>
        <%= content_tag :div, msg, class: "alert alert-info" %>
      <% end %>
 
-     
 
-     <div class="text-end">
-       <%= render 'shared/language_switcher' %>
-     </div>
+
+
 
      <%= yield %>
    </div>

@@ -18,15 +18,18 @@
     <li class="nav-item">
       <%= link_to "Vehiculos", vehicles_url, class: 'nav-link' %>
     </li>
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href=" <%= categories_url %>" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <li><%= link_to "Editar Categorias", categories_url, class: 'dropdown-item' %></li>
-        <% Category.all.each do |cat| %>
-          <li><%= link_to cat.name, store_products_url(category: cat.id), class: 'dropdown-item' %></li>
-        <% end %>
-      </ul>
+    <li class="nav-item">
+      <%= link_to "Marcas", brands_url, class: 'nav-link' %>
     </li>
+    <!-- Dropdown -->
+    <!-- <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href=" <%#= categories_url %>" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <li><%#= link_to "Editar Categorias", categories_url, class: 'dropdown-item' %></li>
+        <%# Category.all.each do |cat| %>
+          <li><%#= link_to cat.name, store_products_url(category: cat.id), class: 'dropdown-item' %></li>
+        <%# end %>
+      </ul>
+    </li> -->
   </ul>
 </div>
