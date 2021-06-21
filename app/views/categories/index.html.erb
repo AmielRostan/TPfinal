@@ -2,12 +2,20 @@
 
 <h1>Categories</h1>
 
+
+
+
+
+
+
 <form method="GET" action="/categories">
-  Nombre de la categoria: <input type="text" name="filter" />
-  <input type="submit">
+  <div class="input-group">
+    <input type="text" name="filter" class="form-control" placeholder="Nombre de la categoria" aria-describedby="input-group-button-right">
+    <button type="submit" class="btn btn-outline-secondary" id="input-group-button-right">Buscar</button>
+  </div>
 </form>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>

@@ -1,5 +1,5 @@
 class BrandsController < ApplicationController
-  before_action :authenticate_user!, :has_person
+  before_action :authenticate_user!
   before_action :set_brand, only: %i[ show edit update destroy ]
 
   # GET /brands or /brands.json

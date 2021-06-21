@@ -8,6 +8,36 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
   </div>
 
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :document_number %>
+    <%= form.number_field :document_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direction %>
+    <%= form.text_field :direction %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :card %>
+    <%= form.number_field :card %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Resend confirmation instructions" %>
   </div>

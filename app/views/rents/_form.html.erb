@@ -17,8 +17,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :person_id %>
-    <%= form.collection_select(:person_id, Person.all, :id, :full_name) %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="field">
@@ -29,6 +28,16 @@
   <div class="field">
     <%= form.label :ends_at %>
     <%= form.date_select :ends_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kilometres if can? :edit, Rent %>
+    <%= form.number_field :kilometres if can? :edit, Rent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :return if can? :edit, Rent %>
+    <%= form.check_box :return if can? :edit, Rent %>
   </div>
 
   <div class="field">

@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get 'firstlook/new'
   get 'firstlook/create'
   resources :rents
-  resources :people
   resources :services
   resources :vehicles
   resources :categories

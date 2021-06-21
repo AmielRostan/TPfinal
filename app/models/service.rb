@@ -40,8 +40,8 @@ class Service < ApplicationRecord
     puts "*** Reserva agendada con exito ***"
   end
 
-  def distance
-    km = self.vehicle.kilometres
-    return km
-  end
+  # def distance
+  #   km = self.vehicle.kilometres
+  #   return km
+  # end
 end

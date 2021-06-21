@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<br>
 <p>
   <strong>Vehicle:</strong>
   <%= @rent.vehicle_id %>
@@ -7,7 +7,7 @@
 
 <p>
   <strong>Person:</strong>
-  <%= @rent.person_id %>
+  <%= @rent.user.full_name %>
 </p>
 
 <p>
@@ -23,6 +23,16 @@
 <p>
   <strong>Pay:</strong>
   <%= @rent.pay %>
+</p>
+
+<p>
+  <strong>kilometres:</strong>
+  <%= @rent.kilometres if can? :edit, Rent %>
+</p>
+
+<p>
+  <strong>return:</strong>
+  <%= @rent.return if can? :edit, Rent %>
 </p>
 
 <%= link_to 'Edit', edit_rent_path(@rent) %> |

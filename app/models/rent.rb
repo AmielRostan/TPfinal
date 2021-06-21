@@ -1,6 +1,6 @@
 class Rent < ApplicationRecord
   belongs_to :vehicle
-  belongs_to :person
+  belongs_to :user
 
   paginates_per 30
 
@@ -9,6 +9,8 @@ class Rent < ApplicationRecord
   validates :begins_at, presence: true
   validates :ends_at, presence: true
   validates :pay, presence: true
+  validates :kilometres, presence: true
+  validates :return, presence: true
 
 
 
@@ -51,4 +53,6 @@ class Rent < ApplicationRecord
       return totalpay
     end
   end
+
+
 end

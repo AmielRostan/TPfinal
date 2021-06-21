@@ -1,11 +1,22 @@
 class VehiclesController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!
   before_action :set_vehicle, only: %i[ show edit update destroy ]
 
   # GET /vehicles or /vehicles.json
   def index
     @vehicles = Vehicle.all
+    if params[:category] # Si viene el parámetro de category_id, devuelvo los vehiculos de la categoria
+      @vehicles = Vehicle.where(category_id: params[:category])
+    elsif params[:fuel]
+      @vehicles = Vehicle.where(fuel: params[:fuel])
+    end
     @vehicles = @vehicles.order(:patent).page(params[:page] || 1)
+
+    # if params[:from] and params[:to]
+    #   @vehicles = Vehicle.filterfromto(params[:from], params[:to])
+    # end
+
   end
 
   # GET /vehicles/1 or /vehicles/1.json

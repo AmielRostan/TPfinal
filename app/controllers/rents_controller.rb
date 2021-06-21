@@ -1,4 +1,5 @@
 class RentsController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!
   before_action :set_rent, only: %i[ show edit update destroy ]
 
@@ -45,6 +46,10 @@ class RentsController < ApplicationController
 
   # PATCH/PUT /rents/1 or /rents/1.json
   def update
+    kms = @rent.kilometres
+    @rent.vehicle.kilometres = @rent.vehicle.kilometres.to_i + kms.to_i
+
+
     respond_to do |format|
       if @rent.update(rent_params)
         format.html { redirect_to @rent, notice: "Rent was successfully updated." }
@@ -65,6 +70,7 @@ class RentsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_rent
@@ -73,6 +79,6 @@ class RentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def rent_params
-      params.require(:rent).permit(:vehicle_id, :person_id, :begins_at, :ends_at, :pay)
+      params.require(:rent).permit(:vehicle_id, :user_id, :begins_at, :ends_at, :pay, :kilometres, :return)
     end
 end

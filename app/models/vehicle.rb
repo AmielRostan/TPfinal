@@ -24,4 +24,26 @@ class Vehicle < ApplicationRecord
       return false
     end
   end
+  # def self.filterfromto(from, to)  # FILTRA DESDE UNA FECHA A LA OTRA
+  #   vehicles = []
+  #   if (from == "" ) or (to == "")
+  #     vehicles = Vehicle.all
+  #   else
+  #     from = from.to_date
+  #     to = to.to_date
+  #     for r in Rent.all
+  #       condition = 0
+  #       if (r.ends_at.to_date > from)
+  #         condition = condition + 1
+  #       end
+  #       if (r.ends_at.to_date < to)
+  #         condition = condition + 1
+  #       end
+  #       if (condition == 2)
+  #         vehicles.push(r.vehicle)
+  #       end
+  #     end
+  #     vehicles
+  #   end
+  # end
 end

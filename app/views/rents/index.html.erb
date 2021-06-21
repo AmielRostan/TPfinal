@@ -2,7 +2,7 @@
 
 <h1>Rents</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Vehicle</th>
@@ -18,7 +18,7 @@
     <% @rents.each do |rent| %>
       <tr>
         <td><%= rent.vehicle_id %></td>
-        <td><%= rent.person_id %></td>
+        <td><%= rent.user.full_name %></td>
         <td><%= rent.begins_at %></td>
         <td><%= rent.ends_at %></td>
         <td><%= rent.pay %></td>

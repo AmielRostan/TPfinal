@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_18_153514) do
+ActiveRecord::Schema.define(version: 2021_06_21_175752) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
@@ -39,13 +39,15 @@ ActiveRecord::Schema.define(version: 2021_06_18_153514) do
 
   create_table "rents", force: :cascade do |t|
     t.integer "vehicle_id", null: false
-    t.integer "person_id", null: false
     t.date "begins_at"
     t.date "ends_at"
     t.string "pay"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["person_id"], name: "index_rents_on_person_id"
+    t.integer "user_id", null: false
+    t.integer "kilometres"
+    t.boolean "return"
+    t.index ["user_id"], name: "index_rents_on_user_id"
     t.index ["vehicle_id"], name: "index_rents_on_vehicle_id"
   end
 
@@ -68,6 +70,12 @@ ActiveRecord::Schema.define(version: 2021_06_18_153514) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "document_number"
+    t.string "direction"
+    t.integer "phone"
+    t.integer "card"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -87,7 +95,7 @@ ActiveRecord::Schema.define(version: 2021_06_18_153514) do
   end
 
   add_foreign_key "people", "users"
-  add_foreign_key "rents", "people"
+  add_foreign_key "rents", "users"
   add_foreign_key "rents", "vehicles"
   add_foreign_key "services", "vehicles"
   add_foreign_key "vehicles", "brands"

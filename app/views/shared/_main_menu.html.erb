@@ -4,13 +4,10 @@
       <%= link_to "Inicio", root_url, class: 'nav-link' %>
     </li>
     <li class="nav-item">
-      <%= link_to "Categorias", categories_url, class: 'nav-link' %>
+      <%= link_to "Categorias", categories_url, class: 'nav-link' if can? :manage, Category %>
     </li>
     <li class="nav-item">
-      <%= link_to "Personas", people_url, class: 'nav-link'%>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Service", services_url, class: 'nav-link' %>
+      <%= link_to "Service", services_url, class: 'nav-link' if can? :manage, Service %>
     </li>
     <li class="nav-item">
       <%= link_to "Alquilar", rents_url, class: 'nav-link' %>
@@ -19,7 +16,7 @@
       <%= link_to "Vehiculos", vehicles_url, class: 'nav-link' %>
     </li>
     <li class="nav-item">
-      <%= link_to "Marcas", brands_url, class: 'nav-link' %>
+      <%= link_to "Marcas", brands_url, class: 'nav-link' if can? :manage, Brand %>
     </li>
     <!-- Dropdown -->
     <!-- <li class="nav-item dropdown">

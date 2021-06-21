@@ -8,10 +8,35 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <!-- <div class="field">
-    <%#= f.label :username %><br />
-    <%#= f.text_field :username %>
-  </div> -->
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :document_number %>
+    <%= f.number_field :document_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :direction %>
+    <%= f.text_field :direction %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :card %>
+    <%= f.number_field :card %>
+  </div>
 
   <div class="field">
     <%= f.label :password %>
